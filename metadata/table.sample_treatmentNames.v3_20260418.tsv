@@ -1,0 +1,14 @@
+Experiment	Sample	Treatment
+##########  experiment_01new: Decided to flip figure1 and SuppFig1 on 2026-03-26
+experiment_02	walbb_elutions.no_enrich_ctrl	Control
+experiment_02	walbb_elutions.1x_elute80C	Enrich_1x
+experiment_02	walbb_elutions.2x_elute80C	Enrich_2x
+##########  experiment_02new: Decided to flip figure1 and SuppFig1 on 2026-03-26
+experiment_01	walbb_control_noEnrich	Control
+experiment_01	walbb_1x_enrich	Enrich_1x
+experiment_01	walbb_2x_enrich	Enrich_2x
+##########  experiment_03
+experiment_03	walbb_rnaseq_noEnrich	Control
+experiment_03	walbb_rnaseq_xrn1	X
+experiment_03	walbb_rnaseq_both__xrn1_cappable	XC
+experiment_03	walbb_rnaseq_cappable	ECap

@@ -1,0 +1,9 @@
+Gene_biotype_original	Gene_biotype.v2	Gene_biotype.v1GRCposter	Colors	ColorsName
+ncRNA	ncRNA	1ncRNA	00ffcc	CyanGreen
+protein_coding	protein_coding	3mRNA	006633	DarkGreen
+pseudogene	Others	2tRNA_and_Others	ccff00	LemonGreen
+RNase_P_RNA	Others	2tRNA_and_Others	ccff00	LemonGreen
+rRNA	rRNA	4rRNA	41CC38	limegreen
+SRP_RNA	Others	2tRNA_and_Others	ccff00	LemonGreen
+tmRNA	Others	2tRNA_and_Others	ccff00	LemonGreen
+tRNA	Others	2tRNA_and_Others	ccff00	LemonGreen
