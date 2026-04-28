@@ -12,18 +12,13 @@ library(plotly)
 library(htmlwidgets)
 
 ####----------- SETWD ----------------------
-work_dir <- "/Users/asinha/Data/cappable-seq/cappable-seq-manuscript-2026/__v2026_04_02.Final_Clean/exp_01.walbb_elutions/03.bwa_normalized_reads/out_idxstats.exp_01";
+work_dir <- "path_to_appropriate_folder";
 # work_dir <- paste(work_dir, "results.exp-03", sep = "/");
 setwd(work_dir);
 
 ####---------- SETUPS ----------------------
 ## metadata
-# chr2sourceSpecies <- "/Users/asinha/Data/core_data/Aedes_albopictus/AalbF5_Foshan_2024/wAlbB_AlbB5Foshan_Anpheviruses.combined_refV4/chromosome_accessions_to_source_species.metadata.tsv";
-# dir_core_data <- "/Users/asinha/Data/core_data/Aedes_albopictus/AalbF5_Foshan_2024/ref_genomes.v5";
-# chr2source_filepath <- paste(dir_core_data, "aa23_walbb_5viruses.ref_genomes.v5.accessions_to_source_species.metadata.tsv", sep = "/");
-# chr2source <- read.table(chr2source_filepath, sep = "\t", h = T)
-
-metadata_folder <- "/Users/asinha/Data/cappable-seq/cappable-seq-manuscript-2026/_metadata_"
+metadata_folder <- "path_to_appropriate_folder"
 
 chr2source_filepath <- paste(metadata_folder, "aa23_walbb_5viruses.ref_genomes.v6.accessions_to_source_species.metadata.V20260408.tsv", sep = "/");
 chr2source <- read.table(chr2source_filepath, sep = "\t", h = T)
@@ -31,7 +26,6 @@ chr2source <- read.table(chr2source_filepath, sep = "\t", h = T)
 unique(chr2source$Source)
 	# [1] "wAlbB"          "Mosquito_mtDNA" "Unmapped_bin"   "Virus_ssRNA"    "Mosquito_gDNA" 
 
-# treatments_metadata_file <- "/Users/asinha/Data/cappable-seq/cappable-seq-manuscript-2026/_metadata_/table.sample_treatmentNames.v2.tsv"
 treatments_metadata_file <- paste(metadata_folder, "table.sample_treatmentNames.v2.tsv", sep = "/")
 treatments_df <- read.table(treatments_metadata_file, sep = "\t", h = T)
 
@@ -50,9 +44,6 @@ treatments_df <- read.table(treatments_metadata_file, sep = "\t", h = T)
 # 	#        "salmon"       "yellow4"  "springgreen3"  "deepskyblue2" "mediumorchid1" 
 
 
-# my_chr2source_colors_file <- "../metadata.colors_for_chromosome2species_source.tsv";
-# my_chr2source_colors_file <- "/Users/asinha/Data/cappable-seq/cappable-seq-manuscript-2026/03.reads2genome_bwa/_6_subsampled_reads_for_biotypes/metadata.colors_for_chromosome2species_source.tsv";
-# my_chr2source_colors_file <- "/Users/asinha/Data/cappable-seq/cappable-seq-manuscript-2026/_metadata_/metadata.colors_for_chromosome2species_source.v20260408.tsv";
 my_chr2source_colors_file <- paste(metadata_folder, "metadata.colors_for_chromosome2species_source.v20260408.tsv", sep = "/");
 my_chr2source_colors_df <- read.table(my_chr2source_colors_file, sep = "\t", h = T)
 my_chr2source_colors_df$color_hex <- paste("#", my_chr2source_colors_df$Color_hexcode_addHASH, sep = "")
@@ -202,7 +193,7 @@ colors5viruses <- brewer.pal(5, "Dark2")
 pie(rep(1, length(colors5viruses)), col = colors5viruses , main="colors5viruses") 
 
 colors5viruses_idlist <- sapply(colors5viruses , plotrix::color.id)
-mycolors_viruses <- read.table("/Users/asinha/Data/cappable-seq/cappable-seq-manuscript-2026/_metadata_/colrs.5viruses.metadata.tsv", sep = "\t", h = T)
+mycolors_viruses <- read.table("colrs.5viruses.metadata.tsv", sep = "\t", h = T)
 mycolors_viruses$color_hex_with_hashSign <- paste("#", mycolors_viruses$ColorHex, sep = "")
 
 mycolors_viruses_scale <- mycolors_viruses$color_hex_with_hashSign

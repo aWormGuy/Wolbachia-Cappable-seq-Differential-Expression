@@ -6,7 +6,7 @@
 #$ -l m_mem_free=4G
 #	# To get an e-mail when the job is done:
 #	#$ -m e
-#	#$ -M asinha@neb.com
+#	#$ -M your_email@server.com
 # export all environment variables to SGE
 #$ -V
 #$ -t 1-3
@@ -18,11 +18,11 @@ micromamba activate subread_env;
 NUMCPU=8;
 ################################################
 
-core_aedes_walbb_data_dir="/mnt/home/asinha/data/core_data/Aedes_albopictus/AalbF5_Foshan_2024/Ae_AlbB5Foshan_and_wAlbB.combined_ref";
+core_aedes_walbb_data_dir="path_to_appropriate_folder";
 my_annotations_gtf="${core_aedes_walbb_data_dir}/Ae_AlbB5Foshan_and_wAlbB.combined_ref.genomic.v1.sorted.gtf";
 my_annotations_gtf="${core_aedes_walbb_data_dir}/wAlbB_annots_only.refseq.v3.sorted.gtf";
 
-base_dir="/mnt/home/asinha/data/cappable-seq-manuscript-2026";
+base_dir="path_to_appropriate_folder";
 experiment_base_dir="${base_dir}/__v2026_04_02.Final_Clean/exp_01.walbb_elutions";
 
 samples_list="${experiment_base_dir}/list.samples.exp_01.list";

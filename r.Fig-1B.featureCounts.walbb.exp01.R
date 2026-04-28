@@ -16,13 +16,10 @@ library(stringr)
 
 
 ## metadata
-# dir_core_data <- "/Users/asinha/Data/core_data/Aedes_albopictus/AalbF5_Foshan_2024/ref_genomes.v5";
-# chr2source_filepath <- paste(dir_core_data, "aa23_walbb_5viruses.ref_genomes.v5.accessions_to_source_species.metadata.tsv", sep = "/");
-# chr2source <- read.table(chr2source_filepath, sep = "\t", h = T)
 
-metadata_folder <- "/Users/asinha/Data/cappable-seq/cappable-seq-manuscript-2026/_metadata_"
+metadata_folder <- "path_to_appropriate_folder"
 
-gene2biotypes_file <- "/Users/asinha/Data/core_data/wAlbB_NEB/v2019-02-15/RefSeq_NZ_CP031221.1/walbb_biotypes.v20260316.tsv";
+gene2biotypes_file <- "path_to_appropriate_folder/wAlbB_NEB/v2019-02-15/RefSeq_NZ_CP031221.1/walbb_biotypes.v20260316.tsv";
 gene2biotypes <- read.table(gene2biotypes_file, sep = "\t", h = T)
 unique(gene2biotypes[,"Gene_biotype"])
 # [1] "protein_coding" "Others"         "ncRNA"          "rRNA"          
@@ -34,8 +31,6 @@ treatments_df <- read.table(treatments_metadata_file, sep = "\t", h = T)
 
 
 ####------------- Setup colors ----------------------------
-# my_biotype_colors_file <- "/Users/asinha/Data/cappable-seq/cappable-seq-14-XRN1-20200320/03.reads_versus_genomes/_featureCounts/analysis_v3.GRC_poster_2025/new_gene_types.with_colors.v2.tsv";
-my_biotype_colors_file <- "/Users/asinha/Data/cappable-seq/cappable-seq-manuscript-2026/_metadata_/walbb.gene2biotype.colors.v2_20260317.tsv"
 my_biotype_colors_file <- paste(metadata_folder, "walbb.gene2biotype.colors.v2_20260408.tsv", sep = "/");
 my_biotype_colors_df <- read.table(my_biotype_colors_file, sep = "\t", h = T)
 
@@ -51,7 +46,7 @@ colScale_4biotypes <- scale_colour_manual(name = "Gene_biotype", values = colors
 
 ####-------------------------------------------------------
 ### actual data
-work_dir <- "/Users/asinha/Data/cappable-seq/cappable-seq-manuscript-2026/__v2026_04_02.Final_Clean/exp_01.walbb_elutions/04.featureCounts_on_normReads";
+work_dir <- "path_to_appropriate_folder/exp_01.walbb_elutions/04.featureCounts_on_normReads";
 work_dir <- paste(work_dir, "out_featureCounts.walbb.exp_01", sep = "/");
 setwd(work_dir);
 

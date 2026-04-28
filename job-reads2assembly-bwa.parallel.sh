@@ -6,7 +6,7 @@
 #$ -pe smp 8 
 # To get an e-mail when the job is done:
 # #$ -m e
-# #$ -M asinha@neb.com
+# #$ -M your_email@server.com
 # export all environment variables to SGE
 #$ -V
 #$ -t 1-3
@@ -18,7 +18,7 @@ micromamba activate my_base_bioinfo;
 NUMCPU=8;
 ################################################
 
-base_dir="/mnt/home/asinha/data/cappable-seq-manuscript-2026";
+base_dir="path_to_appropriate_folder";
 work_dir="${base_dir}/__v2026_04_02.Final_Clean/exp_01.walbb_elutions";
 samples_list="${work_dir}/list.samples.exp_01.list";
 #sample_name=$1; # get from command line
@@ -27,7 +27,7 @@ current_BARCODE=$((SGE_TASK_ID));
 echo "current_BARCODE = ${current_BARCODE}";
 sample_name=`awk -v current_BARCODE=${current_BARCODE} 'NR==current_BARCODE { print $0 }' $samples_list`;
 
-REF_FASTA_DIR="/mnt/home/asinha/data/core_data/Aedes_albopictus/AalbF5_Foshan_2024/ref_genomes.v6";
+REF_FASTA_DIR="path_to_appropriate_folder";
 REF_FASTA_FILE="aa23_walbb_5viruses6segments.ref_genomes.v6.fasta";
 REF_IDX="${REF_FASTA_DIR}/bwa_index_out/${REF_FASTA_FILE}";
 

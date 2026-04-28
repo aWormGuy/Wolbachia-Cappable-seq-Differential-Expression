@@ -6,7 +6,7 @@
 #$ -pe smp 12 
 #	# To get an e-mail when the job is done:
 #	#$ -m e
-#	#$ -M asinha@neb.com
+#	#$ -M your_email@server.com
 # export all environment variables to SGE
 #$ -V
 #$ -t 1-25
@@ -18,7 +18,7 @@ micromamba activate my_base_bioinfo;
 NUMCPU=12;
 ################################################
 
-base_dir="/mnt/home/asinha/data/cappable-seq-manuscript-2026";
+base_dir="path_to_appropriate_folder";
 samples_list="${base_dir}/list_samples.00.raw_data.20260201.list";
 
 sample_name=`awk -v current_line_number=${SGE_TASK_ID} 'NR==current_line_number { print $0 }' $samples_list`;
@@ -36,7 +36,7 @@ out_report="${out_prefix}.report.html";
 trim_length=5; # 10 for PE150; 5 for PE100
 
 ##--- Renmove phiX, Gluc and Fluc first
-phix_Gluc_Fluc="/mnt/home/asinha/data/core_data/GlucFlucPhixSequences-Spike-ins.fasta";
+phix_Gluc_Fluc="/path_to_appropriate_folder/GlucFlucPhixSequences-Spike-ins.fasta";
 tmp_r1="tmp_${sample_name}.r1.fastq";
 tmp_r2="tmp_${sample_name}.r2.fastq";
 stats_phix_removal="stats_phix_FLuc_Gluc_removal.${sample_name}.txt";
